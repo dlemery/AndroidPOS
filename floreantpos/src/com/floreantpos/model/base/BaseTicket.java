@@ -4,6 +4,9 @@ import java.lang.Comparable;
 import java.io.Serializable;
 
 import com.floreantpos.model.TicketCookingInstruction;
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+
 
 
 /**
@@ -49,7 +52,7 @@ public abstract class BaseTicket  implements Comparable, Serializable {
 	public static String PROP_VOIDED = "voided";
 	public static String PROP_TOTAL_AMOUNT = "totalAmount";
 	public static String PROP_PAID_AMOUNT = "paidAmount";
-
+        public static String PROP_GUEST_NAME = "guestName";
 
 	// constructors
 	public BaseTicket () {
@@ -99,6 +102,7 @@ public abstract class BaseTicket  implements Comparable, Serializable {
 	private java.lang.String barCode;
 	private java.lang.String cardType;
 	private java.lang.String cardNumber;
+        private java.lang.String guestName;
 	private java.lang.Boolean taxExempt;
 	private java.lang.Boolean reOpened;
 
@@ -724,7 +728,21 @@ public abstract class BaseTicket  implements Comparable, Serializable {
 		this.cookingInstructions = cookingInstructions;
 	}
 
+        /**
+	 * Return the value associated with the column: GUEST_NAME
+	 */
+	public java.lang.String getGuestName () {
+                JOptionPane.showMessageDialog(null, guestName);
+                return guestName;
+	}
 
+	/**
+	 * Set the value related to the column: GUEST_NAME
+	 * @param createDate the GUEST_NAME value
+	 */
+	public void setGuestName (java.lang.String guestName) {
+		this.guestName = guestName;
+	}
 
 
 
