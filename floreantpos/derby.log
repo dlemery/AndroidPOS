@@ -1,1 +1,11 @@
 Server is ready to accept connections on port 1527.
+Connection number: 1.
+----------------------------------------------------------------
+2011-04-25 22:52:51.445 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.1.3.1 - (417277): instance c013800d-012f-8edd-5ded-0000035bdc08
+on database directory C:\Users\montecalvos\Documents\AndroidPOS\AndroidPOS\floreantpos\posdb 
+
+Database Class Loader started - derby.database.classpath=''
+Connection number: 2.
+Connection number: 3.
+Connection number: 4.
