@@ -31,6 +31,7 @@
     <property column="TRANSACTION_TYPE" index="tickettransactionType" length="20" name="transactionType" type="string"/>
     <property column="TRANSACTION_CODE" length="60" name="transactionCode" type="string"/>
     <property column="BAR_CODE" length="60" name="barCode" type="string"/>
+    <property column="GUEST_NAME" length="20" name="guestName" type="string"/>
     <property column="CARD_TYPE" length="60" name="cardType" type="string"/>
     <property column="CARD_NUMBER" length="60" name="cardNumber" type="string"/>
     <property column="IS_TAX_EXEMPT" name="taxExempt" type="java.lang.Boolean"/>

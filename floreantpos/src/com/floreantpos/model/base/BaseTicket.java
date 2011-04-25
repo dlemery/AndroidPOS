@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *  table="TICKET"
  */
 
-public abstract class BaseTicket  implements Comparable, Serializable {
+public abstract class BaseTicket implements Comparable, Serializable {
 
 	public static String REF = "Ticket";
 	public static String PROP_BAR_CODE = "barCode";
@@ -732,8 +732,7 @@ public abstract class BaseTicket  implements Comparable, Serializable {
 	 * Return the value associated with the column: GUEST_NAME
 	 */
 	public java.lang.String getGuestName () {
-                JOptionPane.showMessageDialog(null, guestName);
-                return guestName;
+               return guestName;
 	}
 
 	/**

@@ -267,7 +267,7 @@ public class Ticket extends BaseTicket {
 		return deletedItems;
 	}
 
-	public void clearDeletedItems() {
+       	public void clearDeletedItems() {
 		if (deletedItems != null) {
 			deletedItems.clear();
 		}

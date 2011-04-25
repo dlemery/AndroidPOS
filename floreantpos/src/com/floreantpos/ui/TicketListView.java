@@ -118,7 +118,7 @@ public class TicketListView extends JPanel {
 					return ticket.getDueAmount();
 
                                 case 6:
-                                        return ticket.getGuestName();
+                                        return String.valueOf(ticket.getGuestName());
 			}
 			
 			return null;
