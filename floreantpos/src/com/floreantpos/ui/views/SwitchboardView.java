@@ -38,6 +38,7 @@ import com.floreantpos.ui.dialog.NumberSelectionDialog2;
 import com.floreantpos.ui.dialog.POSMessageDialog;
 import com.floreantpos.ui.dialog.PaymentTypeSelectionDialog;
 import com.floreantpos.ui.dialog.PayoutDialog;
+import com.floreantpos.ui.dialog.TextInputDialog;
 import com.floreantpos.ui.dialog.TicketDetailDialog;
 import com.floreantpos.ui.dialog.VoidTicketDialog;
 import com.floreantpos.ui.views.order.OrderView;
@@ -487,7 +488,8 @@ public class SwitchboardView extends JPanel implements ActionListener {
 			}
 		}
                 */
-		dialog.setTitle(POSConstants.ENTER_NUMBER_OF_GUEST);
+
+                dialog.setTitle(POSConstants.ENTER_NUMBER_OF_GUEST);
 		dialog.setValue(0);
 		dialog.open();
 
@@ -500,11 +502,23 @@ public class SwitchboardView extends JPanel implements ActionListener {
 			return;
 		}
 
-		Application application = Application.getInstance();
+                TextInputDialog textDialog = new TextInputDialog();
+                textDialog.setTitle(POSConstants.ENTER_GUEST_NAME);
+		textDialog.pack();
+                //textDialog.setValue(0);
+		textDialog.open();
+
+		if (textDialog.isCanceled()) {
+			return;
+                }
+                String guestName = (String) textDialog.getValue();
+
+		Application application =  Application.getInstance();
 
 		ticket = new Ticket();
 		ticket.setTableNumber(tableNumber);
 		ticket.setNumberOfGuests(numberOfGuests);
+                ticket.setGuestName(guestName);
 		ticket.setTerminal(application.getTerminal());
 		ticket.setOwner(Application.getCurrentUser());
 		ticket.setShift(application.getCurrentShift());
