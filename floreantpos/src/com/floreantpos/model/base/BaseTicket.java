@@ -743,8 +743,6 @@ public abstract class BaseTicket implements Comparable, Serializable {
 		this.guestName = guestName;
 	}
 
-
-
 	public boolean equals (Object obj) {
 		if (null == obj) return false;
 		if (!(obj instanceof com.floreantpos.model.Ticket)) return false;
