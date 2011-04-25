@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" android:background="@color/Blue" android:orientation="vertical">
+    <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="match_parent">
+        <TableRow android:layout_gravity="center" android:layout_width="wrap_content" android:id="@+id/tableRow1" android:layout_height="wrap_content">
+            <Button android:id="@+id/ViewMenu" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:text="@string/viewmenu" android:layout_gravity="center"></Button>
+        </TableRow>
+        <TableRow android:layout_gravity="center" android:layout_width="wrap_content" android:id="@+id/tableRow2" android:layout_height="wrap_content">
+            <TextView android:id="@+id/TableText" android:text="@string/TableNumber" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical"></TextView>
+        </TableRow>
+        <EditText android:id="@+id/TableNum" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center"></EditText>
+        <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow3" android:layout_height="wrap_content">
+            <TextView android:id="@+id/PinText" android:text="@string/PinNumber" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center"></TextView>
+        </TableRow>
+        <EditText android:id="@+id/PinNum" android:layout_height="wrap_content" android:layout_width="fill_parent"></EditText>
+        <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content">
+            <Button android:id="@+id/JoinTable" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:text="@string/JoinTable" android:layout_gravity="center"></Button>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
