@@ -732,7 +732,7 @@ public abstract class BaseTicket implements Comparable, Serializable {
 	 * Return the value associated with the column: GUEST_NAME
 	 */
 	public java.lang.String getGuestName () {
-               return guestName;
+                return guestName;
 	}
 
 	/**

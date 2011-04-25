@@ -48,6 +48,7 @@ public class TicketDetailView extends JPanel implements ActionListener {
 	private javax.swing.JLabel lblBalanceDue;
 	private javax.swing.JTextField tfCreateTime;
 	private javax.swing.JTextField tfGuests;
+        private javax.swing.JTextField tfGuestName;
 	private javax.swing.JTextField tfServerId;
 	private javax.swing.JTextField tfServerName;
 	private javax.swing.JTextField tfSubtotal;
@@ -82,6 +83,7 @@ public class TicketDetailView extends JPanel implements ActionListener {
 		addRow(topPanel, com.floreantpos.POSConstants.TERMINAL + ":", tfTerminal = new JTextField());
 		addRow(topPanel, com.floreantpos.POSConstants.TABLE_NO + ":", tfTable = new JTextField());
 		addRow(topPanel, com.floreantpos.POSConstants.GUEST + " #:", tfGuests = new JTextField());
+                addRow(topPanel, com.floreantpos.POSConstants.GUESTNAME + " :", tfGuestName = new JTextField());
 		addRow(topPanel, com.floreantpos.POSConstants.SUBTOTAL + ":", tfSubtotal = new JTextField());
 		addRow(topPanel, com.floreantpos.POSConstants.DISCOUNT + ":", tfTotalDiscount = new JTextField());
 		addRow(topPanel, com.floreantpos.POSConstants.TAX + ":", tfTax = new JTextField());
@@ -245,6 +247,7 @@ public class TicketDetailView extends JPanel implements ActionListener {
 		tfServerName.setText("");
 		tfCreateTime.setText("");
 		tfGuests.setText("");
+                tfGuestName.setText("");
 		tfTable.setText("");
 		tfTerminal.setText("");
 		tfSubtotal.setText("");
@@ -275,6 +278,7 @@ public class TicketDetailView extends JPanel implements ActionListener {
 			tfServerName.setText(ticket.getOwner().toString());
 			tfCreateTime.setText(dateFormat.format(ticket.getCreateDate()));
 			tfGuests.setText(String.valueOf(ticket.getNumberOfGuests()));
+                        tfGuestName.setText(String.valueOf(ticket.getGuestName()));
 			tfTable.setText(String.valueOf(ticket.getTableNumber()));
 			tfTerminal.setText(ticket.getTerminal().getName());
 			tfSubtotal.setText(currencySymbol + Application.formatNumber(ticket.getSubtotalAmount()));
