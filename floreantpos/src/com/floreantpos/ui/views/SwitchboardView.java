@@ -505,7 +505,7 @@ public class SwitchboardView extends JPanel implements ActionListener {
                 TextInputDialog textDialog = new TextInputDialog();
                 textDialog.setTitle(POSConstants.ENTER_GUEST_NAME);
 		textDialog.pack();
-                //textDialog.setValue(0);
+                textDialog.setValue("");
 		textDialog.open();
 
 		if (textDialog.isCanceled()) {
