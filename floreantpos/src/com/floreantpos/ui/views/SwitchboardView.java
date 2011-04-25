@@ -468,7 +468,10 @@ public class SwitchboardView extends JPanel implements ActionListener {
 		TicketDAO dao = TicketDAO.getInstance();
 
 		Ticket ticket = dao.findTicketByTableNumber(tableNumber);
-		if (ticket != null) {
+		
+                //Not needed with mobile app. Multiple people will be setting at the same table
+                /*
+                 if (ticket != null) {
 			int option = JOptionPane.showOptionDialog(this, POSConstants.THE_TABLE_IS_ALREADY_OCCUPIED_WHAT_DO_YOU_WANT_TO_DO, POSConstants.CONFIRM, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Create New Ticket", "Edit Existing Ticket", "Cancel" }, null);
 			if (option == JOptionPane.YES_OPTION) {
 				//createNewTicket();
@@ -483,7 +486,7 @@ public class SwitchboardView extends JPanel implements ActionListener {
 				return;
 			}
 		}
-
+                */
 		dialog.setTitle(POSConstants.ENTER_NUMBER_OF_GUEST);
 		dialog.setValue(0);
 		dialog.open();
