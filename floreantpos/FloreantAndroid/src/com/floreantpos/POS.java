@@ -19,7 +19,7 @@ public class POS extends Activity {
 
           @Override
           public void onClick(View view) {
-            Intent intent = new Intent(POS.this, TableScreen.class);
+            Intent intent = new Intent(POS.this, TableLogin.class);
             startActivity(intent);
           }
 
