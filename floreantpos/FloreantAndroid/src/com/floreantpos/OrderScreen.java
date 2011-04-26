@@ -12,17 +12,11 @@ protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.orderscreenlayout);
 	
-	
-	
-	
-	
-	
-	
-	
-	/*TextView myTextView = (TextView) findViewById(R.id.TextViewTest);
-	myTextView.setText(com.floreantpos.TableLogin.table);
+	TextView myTextView = (TextView) findViewById(R.id.FooPrint);
+	myTextView.setText(com.floreantpos.DBConnect.foo);
+	//myTextView.setText("FooJobby");
 
-	TextView myTextView2 = (TextView) findViewById(R.id.TextViewTest2);
+/*	TextView myTextView2 = (TextView) findViewById(R.id.TextViewTest2);
 	myTextView2.setText(com.floreantpos.TableLogin.pin);*/
 }
 }

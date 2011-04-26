@@ -19,6 +19,7 @@ public class POS extends Activity {
 
           @Override
           public void onClick(View view) {
+        	DBConnect.createConnection();
             Intent intent = new Intent(POS.this, TableLogin.class);
             startActivity(intent);
           }
