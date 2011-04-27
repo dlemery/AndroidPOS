@@ -11,12 +11,9 @@ protected void onCreate(Bundle savedInstanceState) {
 	// TODO Auto-generated method stub
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.orderscreenlayout);
-	
-	TextView myTextView = (TextView) findViewById(R.id.FooPrint);
-	myTextView.setText(com.floreantpos.DBConnect.foo);
-	//myTextView.setText("FooJobby");
-
-/*	TextView myTextView2 = (TextView) findViewById(R.id.TextViewTest2);
-	myTextView2.setText(com.floreantpos.TableLogin.pin);*/
+	//com.floreantpos.DBConnect.main(null);
+	//com.floreantpos.TestDatabase.main(null);
+	//TextView myTextView2 = (TextView) findViewById(R.id.FooPrint);
+	//myTextView2.setText("moooooooo");
 }
 }

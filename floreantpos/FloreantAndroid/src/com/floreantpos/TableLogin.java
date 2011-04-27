@@ -38,7 +38,7 @@ public class TableLogin extends Activity {
 
         @Override
         public void onClick(View view) {
-          Intent intent = new Intent(TableLogin.this, OrderScreen.class);
+          Intent intent = new Intent(TableLogin.this, TestDatabase.class);
           startActivity(intent);
         }
 
