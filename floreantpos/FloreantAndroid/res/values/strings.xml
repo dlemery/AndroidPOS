@@ -12,4 +12,7 @@
     <string name="EnterPinHere">Enter Pin Here</string>
     <string name="viewmenu">View Menu</string>
     <string name="beverages">Beverages</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
 </resources>

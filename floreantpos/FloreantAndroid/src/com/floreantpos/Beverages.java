@@ -22,18 +22,19 @@ protected void onCreate(Bundle savedInstanceState) {
 	//setContentView(R.layout.beverageslayout);
 	com.floreantpos.DBConnect.dataConnect("beverages.php");
 	ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
-    HashMap<String, String> item = new HashMap<String, String>();
-	
+    
+	Log.i("log_tag", DBConnect.FullResult);
 	try{
   	  JSONArray jArray = new JSONArray(DBConnect.FullResult);
   	  //JSONObject json_data = jArray.getJSONObject(1);
       //result = new String(json_data.getString("PRICE"));
             
       for(int i=1;i<jArray.length();i++){
+    	  HashMap<String, String> item = new HashMap<String, String>();
               JSONObject json_data = jArray.getJSONObject(i);
               item.put("name", json_data.getString("NAME"));
               item.put("price", json_data.getString("PRICE"));    
-              
+              list.add(item);
               
              // result = new String(json_data.getString("NAME") + " " + json_data.getString("PRICE"));
       }    
@@ -46,13 +47,14 @@ protected void onCreate(Bundle savedInstanceState) {
             result = new String("Error");
 
     }
-    list.add(item);
+    
     String[] columns = new String[] { "name", "price"};
     int[] renderTo = new int[] { R.id.name, R.id.price};
     
     ListAdapter listAdapter = new SimpleAdapter(this, list, R.layout.beverageitem, columns, renderTo);
 
     setListAdapter(listAdapter);
+    
     
     
     //TextView myTextView = (TextView) findViewById(R.id.beveragelist);

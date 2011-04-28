@@ -59,7 +59,10 @@ public final class R {
         public static final int TableNumber=0x7f040004;
         public static final int app_name=0x7f040001;
         public static final int beverages=0x7f040009;
+        public static final int breakfast=0x7f04000a;
+        public static final int dinner=0x7f04000c;
         public static final int hello=0x7f040000;
+        public static final int lunch=0x7f04000b;
         public static final int viewmenu=0x7f040008;
     }
 }

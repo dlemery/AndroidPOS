@@ -8,13 +8,13 @@
             <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="center" android:id="@+id/Beverages" android:text="@string/beverages"></Button>
         </TableRow>
         <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content">
-            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:text="@string/JoinTable" android:layout_gravity="center" android:id="@+id/Breakfast"></Button>
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="center" android:id="@+id/Breakfast" android:text="@string/breakfast"></Button>
         </TableRow>
         <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content">
-            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:text="@string/JoinTable" android:layout_gravity="center" android:id="@+id/Lunch"></Button>
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="center" android:id="@+id/Lunch" android:text="@string/lunch"></Button>
         </TableRow>
         <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content">
-            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:text="@string/JoinTable" android:layout_gravity="center" android:id="@+id/Dinner"></Button>
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="center" android:id="@+id/Dinner" android:text="@string/dinner"></Button>
         </TableRow>
     </TableLayout>
 </LinearLayout>

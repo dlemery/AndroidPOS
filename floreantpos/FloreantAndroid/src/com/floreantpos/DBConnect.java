@@ -32,7 +32,7 @@ public class DBConnect {
           //http post
           try{
                   HttpClient httpclient = new DefaultHttpClient();
-                  HttpPost httppost = new HttpPost("http://192.168.1.106/" + page);
+                  HttpPost httppost = new HttpPost("http://10.66.17.70/" + page);
                   httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                   HttpResponse response = httpclient.execute(httppost);
                   HttpEntity entity = response.getEntity();
