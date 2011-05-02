@@ -21,12 +21,44 @@ protected void onCreate(Bundle savedInstanceState) {
 	
 	
 	Button BeveragesButton = (Button)findViewById(R.id.Beverages);
-	
 	BeveragesButton.setOnClickListener(new View.OnClickListener() {
 
         @Override
         public void onClick(View view) {
           Intent intent = new Intent(OrderScreen.this, Beverages.class);
+          startActivity(intent);
+        }
+
+      });
+	
+	Button Breakfast = (Button)findViewById(R.id.Breakfast);
+	Breakfast.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+          Intent intent = new Intent(OrderScreen.this, BreakFast.class);
+          startActivity(intent);
+        }
+
+      });
+	
+	Button lunchButton = (Button)findViewById(R.id.Lunch);
+	lunchButton.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+          Intent intent = new Intent(OrderScreen.this, Lunch.class);
+          startActivity(intent);
+        }
+
+      });
+	
+	Button dinnerButton = (Button)findViewById(R.id.Dinner);
+	dinnerButton.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+          Intent intent = new Intent(OrderScreen.this, Dinner.class);
           startActivity(intent);
         }
 

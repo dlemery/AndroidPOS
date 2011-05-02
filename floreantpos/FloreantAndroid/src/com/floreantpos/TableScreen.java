@@ -1,4 +1,7 @@
 package com.floreantpos;
+import java.net.URL;
+import java.net.URLEncoder;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +17,7 @@ public class TableScreen extends Activity {
 	// TODO Auto-generated method stub
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.tablescreenlayout);
+	//com.floreantpos.DBConnect.dataPush();
 	
 	//Button JoinTableButton = (Button)findViewById(R.id.JoinTable);
 	
@@ -26,6 +30,20 @@ public class TableScreen extends Activity {
       }
 
     });*/
+	
+	
+	
+	                
+	         
+	// Send Data To Page
+	/*URL url = new URL(“http://10.99.11.35/jointable.php”);
+	URLConnection conn = url.openConnection();
+	conn.setDoOutput(true);
+	OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+	wr.write(data);
+	wr.flush();*/
+	
+	
 
 }
 

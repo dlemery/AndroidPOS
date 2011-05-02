@@ -3,6 +3,7 @@ package com.floreantpos;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 import org.apache.http.HttpEntity;
@@ -22,7 +23,8 @@ import android.util.Log;
 public class DBConnect {
 	public static String FullResult;
     private static InputStream is = null;
-  
+    private static OutputStream os = null;
+    
     public static void dataConnect(String page) {
        
           //String result = "";    
@@ -32,7 +34,7 @@ public class DBConnect {
           //http post
           try{
                   HttpClient httpclient = new DefaultHttpClient();
-                  HttpPost httppost = new HttpPost("http://10.66.17.70/" + page);
+                  HttpPost httppost = new HttpPost("http://10.99.11.35/" + page);
                   httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                   HttpResponse response = httpclient.execute(httppost);
                   HttpEntity entity = response.getEntity();
@@ -56,9 +58,10 @@ public class DBConnect {
           }catch(Exception e){
                   Log.e("log_tag", "Error converting result "+e.toString());
           }
+    }
           //parse json data
-      
           
-
-}
+    public static void dataPush(){      
+    
+    }
 }

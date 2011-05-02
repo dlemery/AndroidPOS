@@ -33,7 +33,7 @@ protected void onCreate(Bundle savedInstanceState) {
     	  HashMap<String, String> item = new HashMap<String, String>();
               JSONObject json_data = jArray.getJSONObject(i);
               item.put("name", json_data.getString("NAME"));
-              item.put("price", json_data.getString("PRICE"));    
+              item.put("price", "Price: $" +json_data.getString("PRICE"));    
               list.add(item);
               
              // result = new String(json_data.getString("NAME") + " " + json_data.getString("PRICE"));
