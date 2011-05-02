@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" android:background="@color/Blue" android:orientation="vertical">
+    <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="match_parent">
+        <TableRow android:layout_gravity="center" android:layout_width="wrap_content" android:id="@+id/tableRow1" android:layout_height="wrap_content">
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="center" android:id="@+id/Beverages" android:text="@string/beverages"></Button>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content">
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="center" android:id="@+id/Breakfast" android:text="@string/breakfast"></Button>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content">
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="center" android:id="@+id/Lunch" android:text="@string/lunch"></Button>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow4" android:layout_height="wrap_content">
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="center" android:id="@+id/Dinner" android:text="@string/dinner"></Button>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
