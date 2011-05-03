@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Floreant POS</string>
@@ -16,24 +15,7 @@
     <string name="breakfast">Breakfast</string>
     <string name="lunch">Lunch</string>
     <string name="dinner">Dinner</string>
+    <string name="NickName">Nickname:</string>
+    <string name="viewbillh">View/Settle Bill</string>
+    <string name="viewbill">View/Settle Bill</string>
 </resources>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="hello">Floreant POS</string>
-    <string name="app_name">FloreantPOS</string>
-    <color name="Blue">#364263</color>
-    <color name="Black">#000000</color>
-    <string name="Connect">Connect to Restaurant</string>
-    <string name="JoinTable">Join Table</string>
-    <string name="TableNumber">Table Number:</string>
-    <string name="PinNumber">Pin Number:</string>
-    <string name="EnterTableHere">Enter Table Num Here</string>
-    <string name="EnterPinHere">Enter Pin Here</string>
-    <string name="viewmenu">View Menu</string>
-    <string name="beverages">Beverages</string>
-    <string name="breakfast">Breakfast</string>
-    <string name="lunch">Lunch</string>
-    <string name="dinner">Dinner</string>
-</resources>
->>>>>>> ac066869d71bc12ab0b61504323c9dbfd19ff780

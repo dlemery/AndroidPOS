@@ -1,21 +1,11 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent" android:background="@color/Blue" android:orientation="vertical">
     <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="match_parent">
+        <Button android:id="@+id/MenuButton" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/viewmenu"></Button>
+        <Button android:id="@+id/BillButton" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/viewbill"></Button>
 
     </TableLayout>
 </LinearLayout>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent" android:background="@color/Blue" android:orientation="vertical">
-    <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="match_parent">
-
-    </TableLayout>
-</LinearLayout>
->>>>>>> ac066869d71bc12ab0b61504323c9dbfd19ff780
