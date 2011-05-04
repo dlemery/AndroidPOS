@@ -5,7 +5,14 @@
   android:layout_height="fill_parent" android:background="@color/Blue" android:orientation="vertical">
     <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="match_parent">
         <Button android:id="@+id/MenuButton" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/viewmenu"></Button>
-        <Button android:id="@+id/BillButton" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/viewbill"></Button>
-
+        <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/PersonalBill" android:text="@string/personalbill"></Button>
+        <Button android:id="@+id/GroupBill" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/groupbill"></Button>
+        <TextView android:id="@+id/Members" android:text="@string/tablemembers"/>
+    	<TextView android:id="@+id/Total" android:text="@string/total" android:layout_alignParentRight="true" android:gravity="right|center"/>
     </TableLayout>
+    
+    <ListView
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:id="@+id/TableList" android:divider="#000" />
 </LinearLayout>

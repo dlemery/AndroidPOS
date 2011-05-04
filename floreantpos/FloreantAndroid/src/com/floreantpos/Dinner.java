@@ -1,5 +1,6 @@
 package com.floreantpos;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -20,7 +21,6 @@ import android.widget.SimpleAdapter;
 public class Dinner extends ListActivity{@Override
 
 	protected void onCreate(Bundle savedInstanceState) {
-	String result = new String("");
 	super.onCreate(savedInstanceState);
 	//setContentView(R.layout.beverageslayout);
 	com.floreantpos.DBConnect.dataConnect("dinner.php");
@@ -36,7 +36,9 @@ public class Dinner extends ListActivity{@Override
     	  HashMap<String, String> item = new HashMap<String, String>();
               JSONObject json_data = jArray.getJSONObject(i);
               item.put("name", json_data.getString("NAME"));
-              item.put("price", "Price: $" + json_data.getString("PRICE"));    
+              DecimalFormat priceFormatter = new DecimalFormat("$#0.00");
+              String price = priceFormatter.format(json_data.getDouble("PRICE"));
+              item.put("price", "Price: $" + price);    
               list.add(item);
               
              // result = new String(json_data.getString("NAME") + " " + json_data.getString("PRICE"));
@@ -47,7 +49,6 @@ public class Dinner extends ListActivity{@Override
     catch(JSONException e){
 
             Log.e("log_tag", "Error parsing data "+e.toString());
-            result = new String("Error");
 
     }
     
@@ -69,30 +70,45 @@ protected void onListItemClick(ListView l, View v, int position, long id)
 	super.onListItemClick(l, v, position, id);
 	int nameStart = getListView().getItemAtPosition(position).toString().indexOf("name=")+5;
 	int nameEnd = getListView().getItemAtPosition(position).toString().indexOf("}");
-	final String beverageName = new String(getListView().getItemAtPosition(position).toString().substring(nameStart, nameEnd));
+	final String foodName = new String(getListView().getItemAtPosition(position).toString().substring(nameStart, nameEnd));
 	
 	AlertDialog foo = new AlertDialog.Builder(Dinner.this).create();
-	foo.setTitle("Beverage");
-	foo.setMessage(beverageName);
-	//foo.setMessage(aString);
+	foo.setTitle("Food");
+	foo.setMessage(foodName);
 	foo.setButton("Buy", new DialogInterface.OnClickListener() {
 		public void onClick(DialogInterface dialog, int which) {
 			if(DBConnect.response.equalsIgnoreCase("1"))
 			{
-				AlertDialog badlogin = new AlertDialog.Builder(Dinner.this).create();
-	        	badlogin.setTitle("Purchased");
-	        	badlogin.setMessage(beverageName + " purchased for " + TableLogin.getNickname());
-	        	badlogin.setButton("OK", new DialogInterface.OnClickListener() {
-	        		public void onClick(DialogInterface dialog, int which) {        			
+				DBConnect.sendorder(TableLogin.gettable(), "DINNER", TableLogin.getNickname(), foodName);
+				if(DBConnect.Orderresponse.equalsIgnoreCase("1"))
+				{
+					AlertDialog success = new AlertDialog.Builder(Dinner.this).create();
+					success.setTitle("Purchased");
+					success.setMessage(foodName + " purchased for " + TableLogin.getNickname());
+					success.setButton("OK", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {        			
 	        			
-	        		}});
-	        	badlogin.show();
+						}});
+					success.show();
+				}
+				else
+				{
+					AlertDialog error = new AlertDialog.Builder(Dinner.this).create();
+					error.setTitle("Error");
+					error.setMessage("Error ordering.  Please contact server.");
+					error.setButton("OK", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {        			
+	        			
+						}});
+					error.show();
+					
+				}
 			}
 			else
 			{
 				AlertDialog badlogin = new AlertDialog.Builder(Dinner.this).create();
 	        	badlogin.setTitle("Login");
-	        	badlogin.setMessage("You must be at a table to order! WEENER!");
+	        	badlogin.setMessage("You must be at a table to order!");
 	        	badlogin.setButton("OK", new DialogInterface.OnClickListener() {
 	        		public void onClick(DialogInterface dialog, int which) {
 	        				        			

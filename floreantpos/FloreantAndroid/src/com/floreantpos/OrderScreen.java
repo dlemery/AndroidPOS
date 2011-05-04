@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 //import android.content.Intent;
 //import android.widget.*;
 
@@ -14,10 +13,9 @@ protected void onCreate(Bundle savedInstanceState) {
 	// TODO Auto-generated method stub
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.orderscreenlayout);
-	//com.floreantpos.DBConnect.main(null);
-	//com.floreantpos.TestDatabase.main(null);
+
 	//TextView myTextView2 = (TextView) findViewById(R.id.FooPrint);
-	//myTextView2.setText("moooooooo");
+	//myTextView2.setText("test");
 	
 	
 	Button BeveragesButton = (Button)findViewById(R.id.Beverages);

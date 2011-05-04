@@ -1,7 +1,6 @@
 package com.floreantpos;
-import java.net.URL;
-import java.net.URLEncoder;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,8 +8,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.ListActivity;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import android.app.Activity;
@@ -19,7 +18,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 public class TableScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +26,8 @@ public class TableScreen extends Activity {
 	setContentView(R.layout.tablescreenlayout);
 	
 	Button ViewMenuButton = (Button)findViewById(R.id.MenuButton);
+	Button PersonalButton = (Button)findViewById(R.id.PersonalBill);
+	Button GroupButton = (Button)findViewById(R.id.GroupBill);
 	
 	ViewMenuButton.setOnClickListener(new View.OnClickListener() {
 
@@ -38,6 +38,59 @@ public class TableScreen extends Activity {
         }
 
       });
+	
+	PersonalButton.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+          Intent intent = new Intent(TableScreen.this, PersonalBill.class);
+          startActivity(intent);
+        }
+
+      });
+	
+	GroupButton.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+          Intent intent = new Intent(TableScreen.this, GroupBill.class);
+          startActivity(intent);
+        }
+
+      });
+
+	com.floreantpos.DBConnect.tableList("tablemembers.php", TableLogin.gettable());
+	ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+	Log.i("log_tag", DBConnect.FullResult);
+	DecimalFormat priceFormatter = new DecimalFormat("$#0.00");
+	String dueamount;
+	try{
+  	  JSONArray jArray = new JSONArray(DBConnect.FullResult);     
+      for(int i=1;i<jArray.length();i++){
+    	  HashMap<String, String> item = new HashMap<String, String>();
+              JSONObject json_data = jArray.getJSONObject(i);
+              item.put("Person", json_data.getString("GUEST_NAME"));
+              
+              dueamount = priceFormatter.format(json_data.getDouble("DUE_AMOUNT"));
+              item.put("CurrentTotal", dueamount);    
+              list.add(item);
+             
+      }    
+
+    }
+
+    catch(JSONException e){
+
+            Log.e("log_tag", "Error parsing data "+e.toString());
+
+    }
+    
+    String[] columns = new String[] { "Person", "CurrentTotal"};
+    int[] renderTo = new int[] { R.id.Person, R.id.CurrentTotal};
+    
+    ListAdapter listAdapter = new SimpleAdapter(this, list, R.layout.tablemember, columns, renderTo);
+    ListView av = (ListView)findViewById(R.id.TableList);
+    av.setAdapter(listAdapter);
 	
 
 }
