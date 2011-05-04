@@ -115,7 +115,7 @@ public class DBConnect {
 	    }
     }
     
-    public static void tableList(String page, String tablenumber) {
+    public static void tableList(String page, String tablenumber, String nickname) {
      
         //http post
         try{
@@ -123,6 +123,7 @@ public class DBConnect {
                 HttpPost httppost = new HttpPost("http://10.99.10.222/" + page);
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 	            params.add(new BasicNameValuePair("TABLE_NUMBER", tablenumber));
+	            params.add(new BasicNameValuePair("GUEST_NAME", nickname));
                 UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params,HTTP.UTF_8);
 	            httppost.setEntity(ent);
                 HttpResponse response = httpclient.execute(httppost);

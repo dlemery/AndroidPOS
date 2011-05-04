@@ -14,23 +14,27 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 public class PersonalBill extends Activity{
-	protected void onCreate(Bundle savedInstanceState) {
-		com.floreantpos.DBConnect.tableList("tablemembers.php", TableLogin.gettable());
+	protected void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.personalbilllayout);
+		com.floreantpos.DBConnect.tableList("personalbill.php", TableLogin.gettable(), TableLogin.getNickname());
 		ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 		Log.i("log_tag", DBConnect.FullResult);
 		DecimalFormat priceFormatter = new DecimalFormat("$#0.00");
-		String dueamount;
+		String price;
+		double TotalAmount = 0;
 		try{
 	  	  JSONArray jArray = new JSONArray(DBConnect.FullResult);     
 	      for(int i=1;i<jArray.length();i++){
 	    	  HashMap<String, String> item = new HashMap<String, String>();
 	              JSONObject json_data = jArray.getJSONObject(i);
-	              item.put("Person", json_data.getString("GUEST_NAME"));
-	              
-	              dueamount = priceFormatter.format(json_data.getDouble("DUE_AMOUNT"));
-	              item.put("CurrentTotal", dueamount);    
+	              item.put("Item", json_data.getString("ITEM_NAME"));
+	              TotalAmount = TotalAmount + json_data.getDouble("TOTAL_PRICE");
+	              price = priceFormatter.format(json_data.getDouble("TOTAL_PRICE"));
+	              item.put("Price", price);    
 	              list.add(item);
 	             
 	      }    
@@ -43,12 +47,25 @@ public class PersonalBill extends Activity{
 
 	    }
 	    
-	    String[] columns = new String[] { "Person", "CurrentTotal"};
-	    int[] renderTo = new int[] { R.id.Person, R.id.CurrentTotal};
+	    String[] columns = new String[] { "Item", "Price"};
+	    int[] renderTo = new int[] { R.id.Item, R.id.Price};
 	    
 	    ListAdapter listAdapter = new SimpleAdapter(this, list, R.layout.billitem, columns, renderTo);
-	    ListView av = (ListView)findViewById(R.id.TableList);
+	    ListView av = (ListView)findViewById(R.id.personallist);
 	    av.setAdapter(listAdapter);
+	    DecimalFormat pricey = new DecimalFormat("$#0.00");
+        String totalamount = pricey.format(TotalAmount);
+        double TipAmount15 = TotalAmount*.15;
+        DecimalFormat tipey15 = new DecimalFormat("$#0.00");
+        String tipamount15 = pricey.format(TipAmount15);
+        double TipAmount20 = TotalAmount*.20;
+        DecimalFormat tipey20 = new DecimalFormat("$#0.00");
+        String tipamount20 = pricey.format(TipAmount20);
+	    //String totalamount = Double.toString(TotalAmount);
+	    
+	    TextView ptotal = (TextView) findViewById(R.id.personaltotal);
+	    
+	    ptotal.setText("Total:  " + totalamount + "\n" + "15% Tip:  " + tipamount15 + "\n" + "20% Tip:  " + tipamount20);
 		
 	}
 
