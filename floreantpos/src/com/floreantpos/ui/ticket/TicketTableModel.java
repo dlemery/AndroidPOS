@@ -117,7 +117,7 @@ public class TicketTableModel extends AbstractTableModel {
 			return;
 
 		List<TicketItem> ticketItems = ticket.getTicketItems();
-		for (TicketItem ticketItem : ticketItems) {
+                for (TicketItem ticketItem : ticketItems) {
 			ticketItem.setTableRowNum(rowNum);
 			tableRows.put(String.valueOf(rowNum), ticketItem);
 			rowNum++;
