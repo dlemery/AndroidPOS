@@ -22,4 +22,5 @@
     <string name="groupbill">Group Bill</string>
     <string name="tablemembers">Table Members:</string>
     <string name="total">Total</string>
+    <string name="groupheader">Total Group Bill</string>
 </resources>

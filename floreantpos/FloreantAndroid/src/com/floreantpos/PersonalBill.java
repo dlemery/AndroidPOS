@@ -25,6 +25,8 @@ public class PersonalBill extends Activity{
 		Log.i("log_tag", DBConnect.FullResult);
 		DecimalFormat priceFormatter = new DecimalFormat("$#0.00");
 		String price;
+		double itemPrice = 0;
+		double taxAmt = 0;
 		double TotalAmount = 0;
 		try{
 	  	  JSONArray jArray = new JSONArray(DBConnect.FullResult);     
@@ -32,8 +34,11 @@ public class PersonalBill extends Activity{
 	    	  HashMap<String, String> item = new HashMap<String, String>();
 	              JSONObject json_data = jArray.getJSONObject(i);
 	              item.put("Item", json_data.getString("ITEM_NAME"));
-	              TotalAmount = TotalAmount + json_data.getDouble("TOTAL_PRICE");
-	              price = priceFormatter.format(json_data.getDouble("TOTAL_PRICE"));
+	              itemPrice = json_data.getDouble("ITEM_PRICE");
+	              taxAmt = json_data.getDouble("TAX_AMOUNT");
+	              
+	              TotalAmount = TotalAmount + itemPrice + taxAmt;
+	              price = priceFormatter.format(itemPrice + taxAmt);
 	              item.put("Price", price);    
 	              list.add(item);
 	             
@@ -56,10 +61,8 @@ public class PersonalBill extends Activity{
 	    DecimalFormat pricey = new DecimalFormat("$#0.00");
         String totalamount = pricey.format(TotalAmount);
         double TipAmount15 = TotalAmount*.15;
-        DecimalFormat tipey15 = new DecimalFormat("$#0.00");
         String tipamount15 = pricey.format(TipAmount15);
         double TipAmount20 = TotalAmount*.20;
-        DecimalFormat tipey20 = new DecimalFormat("$#0.00");
         String tipamount20 = pricey.format(TipAmount20);
 	    //String totalamount = Double.toString(TotalAmount);
 	    

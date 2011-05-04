@@ -89,6 +89,7 @@ public final class R {
         public static final int breakfast=0x7f04000a;
         public static final int dinner=0x7f04000c;
         public static final int groupbill=0x7f040011;
+        public static final int groupheader=0x7f040014;
         public static final int hello=0x7f040000;
         public static final int lunch=0x7f04000b;
         public static final int personalbill=0x7f040010;

@@ -35,7 +35,7 @@ public class DBConnect {
           //http post
           try{
                   HttpClient httpclient = new DefaultHttpClient();
-                  HttpPost httppost = new HttpPost("http://10.99.10.222/" + page);
+                  HttpPost httppost = new HttpPost("http://10.66.17.10/" + page);
                   httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                   HttpResponse response = httpclient.execute(httppost);
                   HttpEntity entity = response.getEntity();
@@ -70,7 +70,7 @@ public class DBConnect {
     	 	
     		try {
     	        HttpClient client = new DefaultHttpClient();  
-    	        String postURL = "http://10.99.10.222/jointable.php";
+    	        String postURL = "http://10.66.17.10/jointable.php";
     	        HttpPost post = new HttpPost(postURL);
     	            List<NameValuePair> params = new ArrayList<NameValuePair>();
     	            params.add(new BasicNameValuePair("TABLE_NUMBER", tablenumber));
@@ -95,7 +95,7 @@ public class DBConnect {
     		
     		
 	        HttpClient client = new DefaultHttpClient();  
-	        String postURL = "http://10.99.10.222/addtoorder.php";
+	        String postURL = "http://10.66.17.10/addtoorder.php";
 	        HttpPost post = new HttpPost(postURL);
 	            List<NameValuePair> params = new ArrayList<NameValuePair>();
 	            params.add(new BasicNameValuePair("TABLE_NUMBER", tablenumber));
@@ -120,7 +120,7 @@ public class DBConnect {
         //http post
         try{
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("http://10.99.10.222/" + page);
+                HttpPost httppost = new HttpPost("http://10.66.17.10/" + page);
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
 	            params.add(new BasicNameValuePair("TABLE_NUMBER", tablenumber));
 	            params.add(new BasicNameValuePair("GUEST_NAME", nickname));
