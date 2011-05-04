@@ -38,7 +38,7 @@ public class Dinner extends ListActivity{@Override
               item.put("name", json_data.getString("NAME"));
               DecimalFormat priceFormatter = new DecimalFormat("$#0.00");
               String price = priceFormatter.format(json_data.getDouble("PRICE"));
-              item.put("price", "Price: $" + price);    
+              item.put("price", "Price: " + price);    
               list.add(item);
               
              // result = new String(json_data.getString("NAME") + " " + json_data.getString("PRICE"));
