@@ -28,6 +28,7 @@ public class TableScreen extends Activity {
 	Button ViewMenuButton = (Button)findViewById(R.id.MenuButton);
 	Button PersonalButton = (Button)findViewById(R.id.PersonalBill);
 	Button GroupButton = (Button)findViewById(R.id.GroupBill);
+	Button RefreshButton = (Button)findViewById(R.id.refresh);
 	
 	ViewMenuButton.setOnClickListener(new View.OnClickListener() {
 
@@ -58,6 +59,8 @@ public class TableScreen extends Activity {
         }
 
       });
+	
+	
 
 	com.floreantpos.DBConnect.tableList("tablemembers.php", TableLogin.gettable());
 	ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
@@ -91,6 +94,17 @@ public class TableScreen extends Activity {
     ListAdapter listAdapter = new SimpleAdapter(this, list, R.layout.tablemember, columns, renderTo);
     ListView av = (ListView)findViewById(R.id.TableList);
     av.setAdapter(listAdapter);
+    
+    RefreshButton.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+        	
+          Intent intent = new Intent(TableScreen.this, TableScreen.class);
+          startActivity(intent);
+        }
+
+      });
 	
 
 }

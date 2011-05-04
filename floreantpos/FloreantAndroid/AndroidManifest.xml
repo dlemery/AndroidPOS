@@ -36,6 +36,8 @@
         <activity android:label="@string/app_name" android:name=".BreakFast"></activity>
         <activity android:label="@string/app_name" android:name=".Lunch"></activity>
         <activity android:label="@string/app_name" android:name=".Dinner"></activity>
+        <activity android:label="@string/app_name" android:name=".PersonalBill"></activity>
+        <activity android:label="@string/app_name" android:name=".GroupBill"></activity>
         
 
     </application>
